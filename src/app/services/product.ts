@@ -15,15 +15,15 @@ export interface IProduct {
   providedIn: 'root',
 })
 export class ProductService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  fetchProducts(): Observable<IProduct[]>{
-    return this.http.get<IProduct[]>(API + "products").pipe(
-      // Add error handling here
-      catchError(error => {
-        console.error('Error fetching data:', error);
-        return throwError(() => new Error('Something bad happened; please try again later.'));
-      })
-    );
+  fetchProducts(): Observable<IProduct[]> {
+    return this.http.get<IProduct[]>(API + "products")
+  }
+  deleteProduct(id: number): Observable<IProduct> {
+    return this.http.delete<IProduct>(API + "products/" + id)
+  }
+  createProduct(product:Omit<IProduct,'id'>){
+    return this.http.post(API+ "products",product)
   }
 }

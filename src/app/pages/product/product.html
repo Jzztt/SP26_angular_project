@@ -1,4 +1,5 @@
 <p>product works!</p>
+<a routerLink="/product-add">Create Product</a>
 <table>
     <thead>
         <tr>
@@ -17,7 +18,9 @@
             <td>{{ product.description }}</td>
             <td>{{ product.quantity }}</td>
             <td>{{ product.price }}</td>
+            <td>
+                <button (click)="deleteProduct(product)">Delete</button>
+            </td>
         </tr>
-
     </tbody>
 </table>

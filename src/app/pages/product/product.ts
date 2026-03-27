@@ -1,13 +1,12 @@
 import { Component, signal } from '@angular/core';
 import { IProduct, ProductService } from '../../services/product';
 import { CommonModule } from '@angular/common';
-
-
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './product.html',
   styleUrl: './product.css',
 })
@@ -18,10 +17,20 @@ export class Product {
   // products: IProduct[] = [];
   products = signal<IProduct[]>([]);
 
-  ngOnInit() {
+  loadProducts() {
     this.productService.fetchProducts().subscribe((data: IProduct[]) => {
       this.products.set(data);
-      console.log(this.products());
+    });
+  }
+
+  ngOnInit() {
+    this.loadProducts();
+  }
+
+  deleteProduct(product: IProduct) {
+    this.productService.deleteProduct(product.id).subscribe((data) => {
+      this.loadProducts();
+      // this.products.set(this.products().filter(p => p.id !== product.id));
     });
   }
 }
