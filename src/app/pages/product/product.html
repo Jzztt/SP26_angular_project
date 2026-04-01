@@ -19,6 +19,7 @@
             <td>{{ product.quantity }}</td>
             <td>{{ product.price }}</td>
             <td>
+                <a [routerLink]="['/product-edit', product.id]">Edit</a>
                 <button (click)="deleteProduct(product)">Delete</button>
             </td>
         </tr>

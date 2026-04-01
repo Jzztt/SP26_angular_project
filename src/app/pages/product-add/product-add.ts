@@ -23,17 +23,9 @@ export class ProductAdd {
       price: [''],
     });
   }
-  // this.userForm = {
-  //   value: {
-  //     name: '',
-  //     description: '',
-  //     quantity: '',
-  //     price: '',
-  //   }
-  // }
-  onSubmit() {
-    console.log(this.userForm.value);
-    this.productService.createProduct(this.userForm.value).subscribe({});
+  async onSubmit() {
+    await this.productService.createProduct(this.userForm.value).subscribe();
+
     this.router.navigate(['/products']);
   }
 }
