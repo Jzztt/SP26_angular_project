@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 const API = "http://localhost:3000";
 interface IloginPayload {
-  username: string,
+  email: string,
   password: string
 }
 @Injectable({
@@ -16,6 +16,6 @@ export class Auth {
     return this.http.post(API + "/login", payload)
   }
   register(payload: IloginPayload) {
-    return this.http.post("http://localhost:3000/register", payload)
+    return this.http.post(API + "/register", payload)
   }
 }
