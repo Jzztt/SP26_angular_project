@@ -42,5 +42,12 @@
       "price": 1111,
       "id": 6
     }
+  ],
+  "users": [
+    {
+      "email": "olivier@mail.com",
+      "password": "$2a$10$4E1BGloykyJ.UALmqmrMEuYFYik6XEhKyj/ChJkKCoI/wCPQuOgYe",
+      "id": 1
+    }
   ]
 }
