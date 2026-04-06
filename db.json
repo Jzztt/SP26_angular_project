@@ -48,6 +48,11 @@
       "email": "olivier@mail.com",
       "password": "$2a$10$4E1BGloykyJ.UALmqmrMEuYFYik6XEhKyj/ChJkKCoI/wCPQuOgYe",
       "id": 1
+    },
+    {
+      "email": "hienlv12@fpt.edu.vn",
+      "password": "$2a$10$r/SjEONFc87KMGtTzLf9juJz7vY40p38zrT.mOACrYJlLOj/iLSN6",
+      "id": 2
     }
   ]
 }
